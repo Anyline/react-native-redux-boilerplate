@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
-import startScreenReducer from '../containers/StartScreen/reducer';
-import nav from './../routes';
+
+import user from '../containers/UserContainer/reducer';
+import global from '../containers/GlobalContainer/reducer';
+import nav from '../navigator/routeReducer';
 
 const rootReducer = combineReducers({
-  startScreenReducer,
   nav,
+  global,
+  user,
 });
+
 export default rootReducer;

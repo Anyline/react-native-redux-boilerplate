@@ -1,33 +1,48 @@
 import React from 'react';
-import { AppRegistry, BackHandler } from 'react-native';
-import { NavigationActions } from 'react-navigation';
-import { Provider } from 'react-redux';
+import {AppRegistry, BackHandler, findNodeHandle, StyleSheet} from 'react-native';
+import {NavigationActions} from 'react-navigation';
+import {Provider} from 'react-redux';
+
 import configureStore from './store/configureStore';
 import AppNavigator from './navigator';
 
-import { BACK_BUTTON } from './navigator/constants';
-
 const store = configureStore();
+
 class Kernel extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
-    this.sub = BackHandler.addEventListener(
-      'backPress',
-      () => store.dispatch({ type: BACK_BUTTON, payload: NavigationActions.back() }),
-    );
+    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
   }
 
   componentWillUnmount() {
-    this.sub.remove();
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
 
 
+  onBackPress = () => {
+    //check if Drawer open or not on Home Screen
+    if (store.getState().nav.index !== 0) {
+      store.dispatch(NavigationActions.back());
+      return true;
+    } else if (store.getState().nav.routes[0].index !== 1) {
+      store.dispatch(NavigationActions.navigate({routeName: 'Result'}));
+      return true;
+    }
+    return false;
+  };
+
+
   render() {
+
     return (
-      <Provider store={store}>
-        <AppNavigator />
-      </Provider>
+        <Provider store={store}>
+            <AppNavigator/>
+        </Provider>
     );
   }
 }
 
-AppRegistry.registerComponent('anylineDocumentScannerExample', () => Kernel);
+AppRegistry.registerComponent('ReactNativeReduxBoilerplate', () => Kernel);

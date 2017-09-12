@@ -1,7 +1,6 @@
 {
   "name": "react-native-redux-boilerplate",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
@@ -9,12 +8,16 @@
   },
   "dependencies": {
     "global": "^4.3.2",
+    "immutable": "^3.8.1",
     "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.12",
     "react-native": "0.46.4",
     "react-navigation": "^1.0.0-beta.11",
     "react-redux": "^5.0.5",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-persist": "^4.9.1",
+    "redux-persist-transform-immutable": "^4.3.0",
+    "styled-components": "^2.1.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

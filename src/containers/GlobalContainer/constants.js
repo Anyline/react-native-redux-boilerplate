@@ -1,0 +1,1 @@
+export const SET_LOADING_STATE = 'GlobalContainer/SET_LOADING_STATE';

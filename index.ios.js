@@ -7,7 +7,7 @@
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, View} from 'react-native';
 
-export default class anylineDocumentScannerExample extends Component {
+export default class ReactNativeReduxBoilerplate extends Component {
   render() {
     return (
         <View style={styles.container}>
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('anylineDocumentScannerExample', () => anylineDocumentScannerExample);
+AppRegistry.registerComponent('ReactNativeReduxBoilerplate', () => ReactNativeReduxBoilerplate);
