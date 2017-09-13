@@ -18,7 +18,7 @@ state of the art start for your next React-Native project.
 1. Start your platform `react-native run-android` or  `react-native run-ios` (or which fancy output you want to).
 
 
-##Technologies
+## Technologies
 
 
 | Tech | Summary |
