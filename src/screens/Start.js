@@ -43,7 +43,6 @@ Start.navigationOptions = {
 };
 
 const mapStateToProps = state => ({
-  global: state.global,
   user: state.user,
 });
 

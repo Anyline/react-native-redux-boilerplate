@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppRegistry, BackHandler, findNodeHandle, StyleSheet} from 'react-native';
+import {AppRegistry, BackHandler, StyleSheet} from 'react-native';
 import {NavigationActions} from 'react-navigation';
 import {Provider} from 'react-redux';
 
@@ -28,7 +28,7 @@ class Kernel extends React.Component {
       store.dispatch(NavigationActions.back());
       return true;
     } else if (store.getState().nav.routes[0].index !== 1) {
-      store.dispatch(NavigationActions.navigate({routeName: 'Result'}));
+      store.dispatch(NavigationActions.navigate({routeName: 'Start'}));
       return true;
     }
     return false;

@@ -6,14 +6,14 @@ const CustomButton = styled.Button`
   background: blue;
 `;
 
-const Button = ({ title, onPress, disabled=false }) => (
+const Button = ({ title, onPress, disabled = false }) => (
   <CustomButton title={title} onPress={onPress} disabled={disabled} />
 );
 
 Button.propTypes = {
   title: PropTypes.string.isRequired,
-  disabled: PropTypes.bool,
   onPress: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
 };
 
 export default Button;
